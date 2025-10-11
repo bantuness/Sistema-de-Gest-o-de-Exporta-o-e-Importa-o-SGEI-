@@ -113,5 +113,19 @@ namespace SGEI_App
                 ListarClientes();
             }
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (dgvClientes.CurrentRow != null)
+            {
+                int id = (int)dgvClientes.CurrentRow.Cells["Id_Cliente"].Value;
+                var cliente = db.CLIENTES.Find(id);
+
+                db.CLIENTES.Remove(cliente);
+                db.SaveChanges();
+                MessageBox.Show("Cliente excluído!");
+                ListarClientes();
+            }
+        }
     }
 }
