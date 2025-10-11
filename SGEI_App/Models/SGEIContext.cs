@@ -11,5 +11,6 @@ namespace SGEI_App.Models
         }
         public DbSet<Cliente> CLIENTES { get; set; }
         public DbSet<Produtos> PRODUTOS { get; set; }
+        public DbSet<Exportacoes> EXPORTACOES { get; set; }
     }
 }
